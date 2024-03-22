@@ -68,7 +68,7 @@
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 880px) {
   .card {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -79,7 +79,7 @@
   }
 }
 
-@media screen and (max-width: 610px) {
+@media screen and (max-width: 640px) {
   .card {
     display: flex;
     flex-direction: column;

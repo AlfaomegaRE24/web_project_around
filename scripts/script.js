@@ -5,7 +5,7 @@ const popupProfile = document.querySelector(".form-profile");
 const formContainer = document.querySelector(".form__admin");
 
 const profileName = document.querySelector(".profile__info-name");
-const profileAbout = document.querySelector(".profile__info-description");
+const profileAbout = document.querySelector(".profile__info-job");
 
 const popupPlace = document.querySelector(".form-place");
 const addButton = document.querySelector("#add-button");
