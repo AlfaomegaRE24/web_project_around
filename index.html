@@ -8,7 +8,7 @@
       content="Explorador, EE.UU, Lugares para explorar, galeria"
     />
     <meta name="author" content="Leonardo Ramirez" />
-    <title>Al rededor de los EE UU</title>
+    <title>Alrededor de los EE UU</title>
     <link rel="stylesheet" href="./pages/index.css" />
   </head>
   <body class="body">
@@ -20,7 +20,7 @@
 
       <main class="main">
         <section class="profile">
-          <div class="profile__img">
+          <div class="profile__image">
             <img
               class="profile__avatar"
               src="./images/profile.jpg"
@@ -45,162 +45,110 @@
           ></button>
         </section>
 
-        <section class="card">
-          <div class="card__item">
-            <img
-              class="card__item-img"
-              src="./images/monte_fuji.jpg"
-              alt="Monte Fuji en Japón"
-            />
-            <div class="card__footer">
-              <p class="card__footer-name">Monte Fuji,Japón</p>
-              <button class="card__footer-like" type="button"></button>
-            </div>
-            <button class="card__delete" type="button"></button>
-          </div>
-
-          <div class="card__item">
-            <img
-              class="card__item-img"
-              src="./images/templo_de_osaka.jpg"
-              alt="Templo de Osaka"
-            />
-            <div class="card__footer">
-              <p class="card__footer-name">Templo de Osaka, Japón</p>
-              <button class="card__footer-like" type="button"></button>
-            </div>
-            <button class="card__delete" type="button"></button>
-          </div>
-
-          <div class="card__item">
-            <img
-              class="card__item-img"
-              src="./images/akihabara.jpg"
-              alt="Akihabara en Tokio, Japón"
-            />
-            <div class="card__footer">
-              <p class="card__footer-name">Gran zona comercial de Akihabara</p>
-              <button class="card__footer-like" type="button"></button>
-            </div>
-            <button class="card__delete" type="button"></button>
-          </div>
-
-          <div class="card__item">
-            <img
-              class="card__item-img"
-              src="./images/tokio_skytree.jpg"
-              alt="Gran torre de Tokio en Japón"
-            />
-            <div class="card__footer">
-              <p class="card__footer-name">Tokio Skytree</p>
-              <button class="card__footer-like" type="button"></button>
-            </div>
-            <button class="card__delete" type="button"></button>
-          </div>
-
-          <div class="card__item">
-            <img
-              class="card__item-img"
-              src="./images/osaka.jpg"
-              alt="Foto de Osaka en Japón"
-            />
-            <div class="card__footer">
-              <p class="card__footer-name">Osaka, Japón</p>
-              <button class="card__footer-like" type="button"></button>
-            </div>
-            <button class="card__delete" type="button"></button>
-          </div>
-
-          <div class="card__item">
-            <img
-              class="card__item-img"
-              src="./images/jigokudanai.jpg"
-              alt="Entrada del Parque de Jigokudanai"
-            />
-            <div class="card__footer">
-              <p class="card__footer-name">Parque de Monos en Jigokudanai</p>
-              <button class="card__footer-like" type="button"></button>
-            </div>
-            <button class="card__delete" type="button"></button>
-          </div>
-        </section>
-
-        <div class="form form-profile">
-          <form class="form__admin">
-            <img
-              src="./images/close.png"
-              alt="Close icon"
-              class="form__close-icon form__close-icon-profile"
-            />
-            <div>
-              <fieldset class="form__input-container">
-                <h2 class="form__heading">Editar Perfil</h2>
-                <input
-                  id="text-input-name"
-                  class="form__profile-text"
-                  type="text"
-                  placeholder="Nombre"
-                  value="Jacques Cousteau"
-                />
-                <div class="form__line"></div>
-                <input
-                  id="text-input-about"
-                  class="form__profile-text form__profile-text-about"
-                  type="text"
-                  placeholder="Profesión"
-                  value="Explorador"
-                />
-                <div class="form__line"></div>
-                <input class="form__button-save" type="submit" value="Crear" />
-              </fieldset>
-            </div>
-          </form>
-        </div>
-        <div class="form form-place">
-          <form class="form__admin">
-            <img
-              src="./images/close.png"
-              alt="Cerrar ventana"
-              class="form__close-icon form__close-icon-place"
-            />
-            <div>
-              <fieldset class="form__input-container">
-                <h2 class="form__heading">Nuevo lugar</h2>
-                <input
-                  id="#text-input"
-                  class="form__place-text"
-                  type="text"
-                  placeholder="Título"
-                />
-                <div class="form__line"></div>
-                <input
-                  id="url-input"
-                  class="form__text form__text-link"
-                  type="url"
-                  placeholder="Enlace a la imagen"
-                />
-                <div class="form__line"></div>
-                <input class="form__button-save" type="submit" value="Crear" />
-              </fieldset>
-            </div>
-          </form>
-        </div>
-
+        <section id="card-section" class="card"></section>
         <footer class="footer">
           <p class="footer__copyright">&copy; 2024 Leonardo Ramirez</p>
         </footer>
       </main>
     </div>
-    <template class="element__template">
-      <div class="element">
-        <div class="element__image-content">
-          <img src="null" alt="null" class="element__image" />
-          <button class="element__button-trash"></button>
+
+    <!---------TEMPLATE PROFILE----------------------->
+    <div class="popup popup-profile">
+      <div class="popup__overlay"></div>
+      <div class="popup__content">
+        <form class="popup__admin">
+          <img
+            src="./images/close.png"
+            alt="Close icon"
+            class="popup__close-icon popup__close-icon-profile"
+          />
+          <div>
+            <fieldset class="popup__container popup__container-input">
+              <h2 class="popup__heading">Editar Perfil</h2>
+              <input
+                id="text-input-name"
+                class="popup__input popup__input-name"
+                type="text"
+                placeholder="Nombre"
+                value="Jacques Cousteau"
+              />
+              <div class="popup__line"></div>
+              <input
+                id="text-input-about"
+                class="popup__input popup__input-about"
+                type="text"
+                placeholder="Acerca de mí"
+                value="Explorador"
+              />
+              <div class="popup__line"></div>
+              <input class="popup__button-save" type="submit" value="Crear" />
+            </fieldset>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ------------------------PLACES---------------------- -->
+    <div class="popup popup-place">
+      <div class="popup__overlay"></div>
+      <div class="popup__content">
+        <form class="popup__admin">
+          <img
+            src="./images/close.png"
+            alt="Close icon"
+            class="popup__close-icon popup__close-icon-place"
+          />
+          <div>
+            <fieldset class="popup__container popup__container-input">
+              <h2 class="popup__heading">Nuevo lugar</h2>
+              <input
+                id="text-input-place"
+                class="popup__input popup__input-place"
+                type="text"
+                placeholder="Título"
+              />
+              <div class="popup__line"></div>
+              <input
+                id="url-input"
+                class="popup__input popup__input-link"
+                type="url"
+                placeholder="Enlace a la imagen"
+              />
+              <div class="popup__line"></div>
+              <input
+                class="popup__button-save"
+                type="submit"
+                value="Crear"
+                id="saveButton"
+              />
+            </fieldset>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ------------------------IMAGE---------------------- -->
+    <div class="popup popup-card" id="image-popup">
+      <div class="popup__overlay"></div>
+      <div class="popup__content-image">
+        <img
+          src="./images/close.png"
+          alt="Close icon"
+          class="popup__close-icon popup__close-icon-image"
+        />
+        <img class="popup__image" src=" " alt=" " />
+        <p class="popup__title"></p>
+      </div>
+    </div>
+
+    <template id="card-template">
+      <div class="card__item">
+        <img class="card__item-img" src=" " alt=" " />
+        <div class="card__footer">
+          <p class="card__footer-name"></p>
+          <button class="card__footer-like" type="button"></button>
         </div>
-        <div class="element__footer">
-          <p class="element__name"></p>
-          <button class="element__button-like"></button>
-        </div>
+        <button class="card__delete" type="button"></button>
       </div>
     </template>
     <script src="scripts/script.js"></script>

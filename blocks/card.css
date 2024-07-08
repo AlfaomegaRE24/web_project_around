@@ -15,9 +15,19 @@
 }
 
 .card__item-img {
-  border-radius: 10px 10px 0 0;
+  height: 282px;
   width: 100%;
-  height: 80%;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.card__footer {
+  padding: 0 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .card__footer-name {
@@ -29,25 +39,30 @@
 }
 
 .card__footer-like {
-  background-image: url(../images/like.png);
-  background-color: transparent;
+  background: url(../images/like.png) center no-repeat;
   width: 21px;
   height: 19px;
   border: none;
   cursor: pointer;
+  padding-right: 20px;
 }
 
 @media (hover: hover) {
   .card__footer-like:hover {
     opacity: 50%;
+    transform: scale(1.1);
+    transition: 0.3s;
   }
 }
 
-.card__footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
+.card__footer-like_active {
+  opacity: 1;
+  background: url(../images/fulled-heart.jpg) center no-repeat;
+  transform: scale(1.1);
+}
+
+.popup_card {
+  visibility: hidden;
 }
 
 .card__delete {
