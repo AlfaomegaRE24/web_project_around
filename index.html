@@ -56,7 +56,7 @@
     <div class="popup popup-profile">
       <div class="popup__overlay"></div>
       <div class="popup__content">
-        <form class="popup__admin">
+        <form name="profile-form" class="popup__admin" novalidate>
           <img
             src="./images/close.png"
             alt="Close icon"
@@ -71,17 +71,34 @@
                 type="text"
                 placeholder="Nombre"
                 value="Jacques Cousteau"
+                required
+                minlength="2"
+                maxlength="40"
+                name="name"
               />
               <div class="popup__line"></div>
+              <span class="popup__input-error text-input-name-error"></span>
               <input
                 id="text-input-about"
                 class="popup__input popup__input-about"
                 type="text"
                 placeholder="Acerca de mí"
                 value="Explorador"
+                required
+                minlength="2"
+                maxlength="200"
+                name="about"
               />
               <div class="popup__line"></div>
-              <input class="popup__button-save" type="submit" value="Crear" />
+              <span class="popup__input-error text-input-about-error"></span>
+              <button
+                class="popup__button-save"
+                type="submit"
+                value="Crear"
+                disabled
+              >
+                Crear
+              </button>
             </fieldset>
           </div>
         </form>
@@ -92,7 +109,7 @@
     <div class="popup popup-place">
       <div class="popup__overlay"></div>
       <div class="popup__content">
-        <form class="popup__admin">
+        <form name="place-form" class="popup__admin" no validate>
           <img
             src="./images/close.png"
             alt="Close icon"
@@ -106,21 +123,32 @@
                 class="popup__input popup__input-place"
                 type="text"
                 placeholder="Título"
+                required
+                minlength="2"
+                maxlength="30"
+                name="title"
               />
               <div class="popup__line"></div>
+              <span class="popup__input-error text-input-place-error"></span>
               <input
                 id="url-input"
-                class="popup__input popup__input-link"
+                class="popup__input popup__input-link popup__input-place"
                 type="url"
                 placeholder="Enlace a la imagen"
+                required
+                name="link"
               />
               <div class="popup__line"></div>
-              <input
-                class="popup__button-save"
+              <span class="popup__input-error url-input-error"></span>
+              <button
+                class="popup__button-save popup__button-save-place"
                 type="submit"
                 value="Crear"
                 id="saveButton"
-              />
+                disabled
+              >
+                Crear
+              </button>
             </fieldset>
           </div>
         </form>
@@ -152,5 +180,6 @@
       </div>
     </template>
     <script src="scripts/script.js"></script>
+    <script src="scripts/validate.js"></script>
   </body>
 </html>
