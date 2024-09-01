@@ -128,9 +128,6 @@ function handlePlaceFormSubmit(evt) {
   const cardElement = createCards(placeInput.value, linkInput.value);
   cardsContainer.prepend(cardElement);
   popupPlace.classList.remove("popup_open");
-
-  //placeInput.value = "";
-  //linkInput.value = "";
 }
 
 popupPlace.addEventListener("submit", handlePlaceFormSubmit);
